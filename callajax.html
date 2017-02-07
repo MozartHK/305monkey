@@ -1,0 +1,27 @@
+<html>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  alert("D");
+    $.ajax({
+        url: 'http://node305-alexng88536444.codeanyapp.com:9999/',
+        dataType: "jsonp",
+        jsonpCallback: "_testcb",
+        cache: false,
+        timeout: 5000,
+        success: function(data) {
+        //  alert("hihi"+data);
+            $("#test").append(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+         alert("STATUS" + textStatus);
+           // alert('tterror ' + textStatus + " " + errorThrown);
+        }
+    });
+});
+</script>
+<body>
+HTML page
+</body>
+</html>

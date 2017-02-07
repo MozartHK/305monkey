@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html lang = "en">
+
+    <head>
+    <title>Testing Server Call </title> 
+    <script type = "text/javascript" src = "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script> 
+    <script type = "text/javascript" >
+    $(function() {
+        $.ajax({
+            type: 'GET',
+            url: 'myserver.js'
+            success: function(data) {
+                console.log('yay');
+                console.log(data);              
+            },
+            error: function(xhr, status, error) {
+                console.log('Error: ' + error.message);
+            }
+        });
+
+
+    });
+
+</script> 
+</head>
+<body>
+    hi there
+
+</body>
+</html>
