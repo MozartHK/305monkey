@@ -14,6 +14,7 @@
     urlData = url.parse(req.url, true);
     action = urlData.pathname;
     publicPath = __dirname + "\\public\\";
+   console.log(req.url);
     if (action === "/Signup") {
      
       if (req.method === "POST") {
@@ -48,7 +49,14 @@
           }
         });
       }
-    } else {
+    } else if( action==="/newpage"){
+       res.writeHead(200, {
+        "Content-Type": "text/html"
+      });
+      return res.end("<h1>歡迎光臨Node.js菜鳥筆記2</h1><p><a href=\"/Signup\">註冊</a></p>");
+    }
+    
+    else {
       res.writeHead(200, {
         "Content-Type": "text/html"
       });

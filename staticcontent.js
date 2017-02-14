@@ -7,6 +7,7 @@ http.createServer(function(request, response) {
 		sendFileContent(response, "callajax.html", "text/html");
 	}
 	else if(request.url === "/"){
+		console.log("Requested URL is url" +request.url);
 		response.writeHead(200, {'Content-Type': 'text/html'});
 		response.write('<b>Hey there!</b><br /><br />This is the default response. Requested URL is: ' + request.url);
 	}
@@ -20,7 +21,7 @@ http.createServer(function(request, response) {
 		console.log("Requested URL is: " + request.url);
 		response.end();
 	}
-}).listen(8000);
+}).listen(9999)
 
 function sendFileContent(response, fileName, contentType){
 	fs.readFile(fileName, function(err, data){
