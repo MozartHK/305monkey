@@ -18,6 +18,10 @@ request(url, function (error, response, body) {
     // 輸出
     console.log("氣溫：攝氏 " + temperature + " 度");
     console.log("濕度：" + humidity + "%");
+    $('#a').html(temperature);
+   
+   // response.write ('<html><body><div id="a"></div> </body> </html>');
+
 
   } else {
     console.log("擷取錯誤：" + error);
