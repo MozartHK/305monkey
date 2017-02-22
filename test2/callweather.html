@@ -1,0 +1,43 @@
+<html>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+<script>
+$(document).ready(function() {
+
+      $.ajax({
+            type: 'GET',
+            url: 'http://www.wunderground.com/weather-forecast/zmw:00000.1.59358',
+            data:{get_param: 'value' },
+            dataType: "html",
+            crossDomain: true,          
+             cache:false, 
+
+            success: function(data) {
+              alert(data);
+               var temperature = $("[data-variable='temperature'] .wx-value").html();
+               var humidity = $("[data-variable='humidity'] .wx-value").html();
+            },
+            error: function(xhr, status, error) {
+                console.log('Error: ' + error.message);
+            }
+        });
+      /*  $.get( "http://www.wunderground.com/weather-forecast/zmw:00000.1.59358", function( data ) {
+          alert(data);
+            $( ".result" ).html( data );
+           alert( "Load was performed." );
+           });*/
+
+ 
+});
+</script>
+<body>
+  
+Here is a page to call weather API
+  
+ 
+  
+  
+  
+</body>
+</html>

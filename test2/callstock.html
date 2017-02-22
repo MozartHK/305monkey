@@ -1,0 +1,40 @@
+<html>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ <script src="./Example2.js"></script>
+<script>
+
+    
+$(document).ready(function() {
+
+      (function() {
+  var  GetStockPrice = (function() {
+    var  GetStockPrice = function(options) {
+      
+    };
+
+     GetStockPrice.prototype.foo = function foo() {
+      var returned = GetStockPrice('AMZN');
+console.log(returned);
+    };
+
+    return  GetStockPrice;
+  })();
+
+  if (typeof module !== 'undefined' && typeof module.exports !== 'undefined')
+    module.exports =  GetStockPrice;
+  else
+    window. GetStockPrice =  GetStockPrice;
+})();
+ 
+});
+</script>
+<body>
+  <a href="/weather">Weather</a>
+Here is a page to call stock API
+  
+
+  
+  
+  
+</body>
+</html>
