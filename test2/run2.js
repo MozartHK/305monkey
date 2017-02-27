@@ -59,7 +59,22 @@ http.createServer(function (request, response) {
             //return response.end;
           }
         });
-      }else if(request.url == '/other2') {
+      }else if (request.url == '/git'){
+         form = "callgithubapi.html";
+          fs.readFile(form, function(err, contents) {
+          if (err !== true) {
+            response.writeHead(200, {
+              "Content-Type": "text/html"
+            });
+            response.end(contents);
+          } else {
+            response.writeHead(500);
+			response.end('_testcb(\'{"message": "Hello world 444!"}\')');
+            //return response.end;
+          }
+        });
+      }
+			else if(request.url == '/other2') {
         html = fs.readFileSync("callstock.html", "utf8");
         response.write(html);
       } else if (request.url ==  "/Example2.js") {
